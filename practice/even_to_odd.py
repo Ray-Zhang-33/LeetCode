@@ -18,7 +18,7 @@ def split_numbers(array):
         else:
             odd.append(number)
     power_divisors = cauculate_number_of_power_divisors(even)
-    sorted_even = [(n, pd) for n, pd in sorted(zip(even, power_divisors), reverse=True)]
+    sorted_even = [(n, pd) for n, pd in sorted(zip(even, power_divisors), key=lambda x: x[1], reverse=True)]
     print(sorted_even, odd)
     return sorted_even, odd        
 
@@ -34,6 +34,7 @@ def caculate_number_of_operations():
             operations += t[1]
     print(operations)
 
+# -------------- Main ---------------
 # Read input from stdin
 number_of_arrays = sys.stdin.readline().strip()
 arrays = []
